@@ -8,7 +8,7 @@ module.exports = {
     reporter: 'spec',
     retries: 1,
     sort: false,
-    spec: ['src/tests/**/testFirstAAA.js'], // the positional arguments!
+    spec: ['src/tests/**/NewTestSecond.js'], // the positional arguments!
     timeout: '200000',
     ui: 'bdd',
 };

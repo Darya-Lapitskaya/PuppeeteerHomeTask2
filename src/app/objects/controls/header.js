@@ -1,14 +1,15 @@
 const BaseObject = require('../baseObject');
+const ph = require('../../pageHolder');
+ui = require('../../ui');
 
 
+class Header extends BaseObject {
 
-class Header extends BaseObject{
-     ph = require('../../pageHolder');
-      get title() {
-        console.log('headers: get title'); 
-        //return this.ph.page.$('app-title')}
-
-       return this.ph.page.$$('.buttons_1r9m>a')[0]}
+  get searchField() {
+    console.log('headers: get search field');
+    //return this.ph.page.$('.DocSearch-Button-Placeholder');
+    return this.ph.page.$('.DocSearch-Button-Placeholder');
+  }
 
 }
 

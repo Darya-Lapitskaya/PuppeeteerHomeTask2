@@ -3,6 +3,7 @@ const chai = require('chai');
 
 class Ui {
     #ph = require('./pageHolder');
+    
     get ph() {
         console.log('UI: get ph');
         return this.#ph;
@@ -16,7 +17,7 @@ class Ui {
     cache = {};
 
     get header() {
-        //console.log(this.cache);
+        console.log(this.cache);
         if (this.cache[Header.toString()]) {
             console.log('UI: get header from cache');
             return this.cache[Header.toString()];

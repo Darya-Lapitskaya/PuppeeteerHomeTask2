@@ -1,10 +1,9 @@
-//const puppeteer = require('puppeteer');
-const { expect } = require('chai');
-
+//const expect = require('chai');
 const ph = require('../app/pageHolder');
 const ui = require('../app/ui');
 const header = require('../app/objects/controls/header');
-// //const ph = require('../app/pageHolder');
+homePage = require('../app/objects/pages/homePage');
+
 
 
 describe('SIMPLE TESTS2222', function () {
@@ -24,6 +23,7 @@ describe('SIMPLE TESTS2222', function () {
         console.log('Inside Before each');
         await ui.ph.create();
         await ui.ph.page.goto('https://webdriver.io/');
+        //await ui.ph.page.waitForResponse('https://webdriver.io/img/logo-webdriver-io.png');
 
     });
 
@@ -32,17 +32,46 @@ describe('SIMPLE TESTS2222', function () {
         await ui.ph.close();
     });
 
-    it('Test2', async function () {
-        console.log('START TEST');
-        await ui.ph.page.waitForTimeout(2000);
-        console.log('AFTER WAIT FOR RESPONCE');
-       //const text3 = await ui.header.getText('searchField');
-     //  const text3 = ui.header.searchField;
-        const text2 = await ui.ph.page.evaluate(element => element.textContent, await ui.header.searchField);
-        console.log(text2);
-        console.log('AFTER GET TITLE');
-        ui.expect(text2).to.equal('Search')
+    it('should check Search field name', async function () {
+        const elementText = await ui.header.getText('searchField');
+        ui.expect(elementText).to.equal('Search');
+
+    });
+
+    it('should check subtielt on the main page', async function () {
+        const elementText = await ui.header.getText('subTitle');
+        ui.expect(elementText).to.equal('Next-gen browser and mobile automation test framework for Node.js');
 
 
     });
+
+    it('check Get Started button', async function () {
+        const elementText = await ui.homePage.getText('getStartedBtn');
+        ui.expect(elementText).to.equal('Get Started');
+    });
+
+    it('check Watch Talks button', async function () {
+        const elementText = await ui.homePage.getText('watchTalksBtn');
+        ui.expect(elementText).to.equal('Watch Talks');
+    });
+
+
+    it('check Read the Book button', async function () {
+        const elementText = await ui.homePage.getText('readTheBookBtn');
+        ui.expect(elementText).to.equal('Read the Book');
+    });
+
+
+    it('check Take The Course button', async function () {
+        const elementText = await ui.homePage.getText('takeTheCourseBtn');
+        ui.expect(elementText).to.equal('Take The Course');
+    });
+
+
+    it('check Support button', async function () {
+        const elementText = await ui.homePage.getText('supportBtn');
+        ui.expect(elementText).to.equal('Support');
+    });
+
+    
 });

@@ -4,9 +4,6 @@ const ph = require('../../pageHolder');
 ui = require('../../ui');
 
 
-
-   
-
 class HomePage extends BasePage {
 
     get getStartedBtn() {
@@ -60,6 +57,11 @@ class HomePage extends BasePage {
             }
           })();
     }
+
+    async getText(element) {
+      return (await this.ph.page.evaluate(node => node.textContent, await this[element])).trim();
+  }
+
 
 
 

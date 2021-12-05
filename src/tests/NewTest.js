@@ -17,7 +17,7 @@ describe('Test suite for main page', function () {
     beforeEach(async () => {
         await ui.ph.create();
         await ui.ph.page.goto('https://webdriver.io/');
-        //await ui.ph.page.waitForResponse('https://webdriver.io/img/logo-webdriver-io.png');
+        ui.ph.page.waitForResponse('https://webdriver.io/img/logo-webdriver-io.png');
 
     });
 
@@ -31,7 +31,7 @@ describe('Test suite for main page', function () {
 
     });
 
-    it('should check subtielt on the main page', async function () {
+    it('should check subtitle on the main page', async function () {
         const elementText = await ui.header.getText('subTitle');
         ui.expect(elementText).to.equal('Next-gen browser and mobile automation test framework for Node.js');
 

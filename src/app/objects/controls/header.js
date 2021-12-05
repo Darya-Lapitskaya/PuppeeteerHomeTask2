@@ -11,6 +11,13 @@ class Header extends BaseObject {
     return this.ph.page.$('.DocSearch-Button-Placeholder');
   }
 
+
+  get logo() {
+    return this.ph.page.$('.navbar__logo');
+  }
+
+
+
 }
 
 module.exports = Header;

@@ -1,4 +1,5 @@
 const Header = require('./objects/controls/header');
+const HomePage = require('../app/objects/pages/homePage');
 const chai = require('chai');
 
 class Ui {
@@ -17,7 +18,7 @@ class Ui {
     cache = {};
 
     get header() {
-        console.log(this.cache);
+       // console.log(this.cache);
         if (this.cache[Header.toString()]) {
             console.log('UI: get header from cache');
             return this.cache[Header.toString()];
@@ -25,6 +26,19 @@ class Ui {
         console.log('UI: get header create object');
         let obj = new Header();
         this.cache[Header.toString()] = obj;
+        return obj;
+
+    }
+
+    get homePage() {
+       // console.log(this.cache);
+        if (this.cache[HomePage.toString()]) {
+            console.log('UI: Homepage from cache');
+            return this.cache[HomePage.toString()];
+        }
+        console.log('UI: Homepage create object');
+        let obj = new HomePage();
+        this.cache[HomePage.toString()] = obj;
         return obj;
 
     }

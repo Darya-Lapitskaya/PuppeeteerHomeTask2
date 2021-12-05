@@ -4,23 +4,17 @@ const ui = require('../app/ui');
 const header = require('../app/objects/controls/header');
 homePage = require('../app/objects/pages/homePage');
 
-
-
-describe('SIMPLE TESTS2222', function () {
+describe('Test suite for main page', function () {
 
     before(async () => {
-        console.log('Inside Before All');
         await ui.ph.launch();
-
     });
 
     after(() => {
-        console.log('Inside after All');
         ui.ph.finish();
     });
 
     beforeEach(async () => {
-        console.log('Inside Before each');
         await ui.ph.create();
         await ui.ph.page.goto('https://webdriver.io/');
         //await ui.ph.page.waitForResponse('https://webdriver.io/img/logo-webdriver-io.png');
@@ -28,7 +22,6 @@ describe('SIMPLE TESTS2222', function () {
     });
 
     afterEach(async () => {
-        console.log('Inside After each');
         await ui.ph.close();
     });
 
@@ -73,5 +66,5 @@ describe('SIMPLE TESTS2222', function () {
         ui.expect(elementText).to.equal('Support');
     });
 
-    
+
 });

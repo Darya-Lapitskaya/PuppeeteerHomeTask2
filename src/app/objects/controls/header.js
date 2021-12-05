@@ -6,8 +6,6 @@ ui = require('../../ui');
 class Header extends BaseObject {
 
   get searchField() {
-    console.log('headers: get search field');
-    //return this.ph.page.$('.DocSearch-Button-Placeholder');
     return this.ph.page.$('.DocSearch-Button-Placeholder');
   }
 
@@ -18,9 +16,6 @@ class Header extends BaseObject {
   get subTitle() {
     return this.ph.page.$('.hero__subtitle');
   }
-
-  
-
 
 
 }

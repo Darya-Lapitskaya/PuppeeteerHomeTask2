@@ -1,4 +1,3 @@
-//const path = require('path');
 
 module.exports = {
     color: true,
@@ -8,7 +7,7 @@ module.exports = {
     reporter: 'spec',
     retries: 1,
     sort: false,
-    spec: ['src/tests/**/newTest.js'], // the positional arguments!
+    spec: ['src/tests/**/newTest.js'],
     timeout: '200000',
     ui: 'bdd',
 };
